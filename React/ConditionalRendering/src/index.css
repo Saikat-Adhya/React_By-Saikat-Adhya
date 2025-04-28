@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -33,7 +33,6 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: black;
 }
 
 button {
@@ -66,4 +65,15 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+.okk1 {
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;
+  background-color: #747bff;
+  border: #00ff00 solid 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
