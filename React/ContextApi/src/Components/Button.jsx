@@ -5,7 +5,11 @@ import { counterContext } from "../context/context";
 const Button = () => {
     const  value = useContext(counterContext)
     const changeHandler = () => {
-        value.setCount((count) => count + 1);
+        if (value.count > 10) {
+            value.setCount((prev) => prev - 1);
+            
+        }
+        // value.setCount((prev) => prev - 1);
     }
   return (
     <div>
