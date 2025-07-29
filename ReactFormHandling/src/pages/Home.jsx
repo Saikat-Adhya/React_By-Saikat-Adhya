@@ -8,7 +8,11 @@ const Home = () => {
   const [data, setData] = React.useState([]);
 
   useEffect(()=>{
-    axios.get(`${import.meta.env.VITE_API_URL}/api/user`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/user`,{
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('userToken')}` // Include token in request headers
+      }
+    })
       .then((response) => {
         setData(response.data);
       })
@@ -16,7 +20,7 @@ const Home = () => {
         console.error('Error fetching users:', error);
         alert("Failed to fetch user data.");
       });
-  }, [data]);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('userToken');

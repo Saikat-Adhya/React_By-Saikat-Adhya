@@ -17,24 +17,11 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (data.email && data.password) {
-    //     const storedEmail = localStorage.getItem('email');
-    //     const storedPassword = localStorage.getItem('password');
-    //     if (data.email === storedEmail && data.password === storedPassword) {
-    //         localStorage.setItem('userToken', 'authenticated');
-    //         console.log('Login successful');
-    //              navigate('/');
-    //     } else {
-    //         console.log('Invalid email or password');
-    //     }
-
-    // }
-
     axios
       .post(`${import.meta.env.VITE_API_URL}/api/login`, data)
       .then((response) => {
         console.log("Login successful:", response.data);
-        localStorage.setItem("userToken", response.data.user._id); // Store user ID or token
+        localStorage.setItem("userToken", response.data.token); // Store user ID or token
         navigate("/"); // Redirect to home page after successful login
       })
       .catch((error) => {
